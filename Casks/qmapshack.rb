@@ -1,6 +1,6 @@
-cask :v1 => 'qmapshack' do
-  version '1.3.1'
-  sha256 '140a1990bd6ba3679ba8bea4ab408fa0efeb66ebb686bc7b855a2e431c655b77'
+cask 'qmapshack' do
+  version '1.5.1'
+  sha256 '84f90014226ce4c24e0c5f9e00e400eb83af80d95d378e44324ced2903e8314c'
 
   url "https://bitbucket.org/maproom/qmapshack/downloads/QMapShack-MacOSX_#{version}.tar.gz"
   name 'QMapShack'

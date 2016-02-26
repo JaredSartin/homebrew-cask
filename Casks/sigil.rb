@@ -1,10 +1,11 @@
-cask :v1 => 'sigil' do
-  version '0.8.7'
-  sha256 'a34ad28a758c64202cb380dcb3831d8f3a6afc100926be7be93d12f39f9493d7'
+cask 'sigil' do
+  version '0.9.3'
+  sha256 '83164918449ceee1080e1491c1d33ef9afabcf4d8866a4c738d24e58e27a89d0'
 
   # github.com is the official download host per the vendor homepage
-  url "https://github.com/user-none/Sigil/releases/download/#{version}/Sigil-#{version}-Mac-Package.dmg"
-  appcast 'https://github.com/user-none/Sigil/releases.atom'
+  url "https://github.com/Sigil-Ebook/Sigil/releases/download/#{version}/Sigil-#{version}-Mac-Package.dmg"
+  appcast 'https://github.com/Sigil-Ebook/Sigil/releases.atom',
+          checkpoint: '0b17e785f19bbdb331a4f141e00804eaaafd210a64f4a1b84097abbeaba4c860'
   name 'Sigil'
   homepage 'http://sigil-ebook.com/'
   license :gpl

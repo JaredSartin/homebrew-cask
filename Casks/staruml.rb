@@ -1,6 +1,6 @@
-cask :v1 => 'staruml' do
-  version '2.5.0'
-  sha256 '1e974938956bb30d03ff3d6b9cf009d999ccc237c15d50693e02cd7451791404'
+cask 'staruml' do
+  version '2.6.0'
+  sha256 '28653aaf023300b49f9e291ba837c8cc9addc1433fa5b63b89c49351447d445b'
 
   url "http://staruml.io/download/release/v#{version}/StarUML-v#{version}.dmg"
   name 'StarUML'

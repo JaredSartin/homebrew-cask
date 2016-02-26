@@ -1,14 +1,15 @@
-cask :v1 => 'lingon-x' do
-  version :latest
-  sha256 :no_check
+cask 'lingon-x' do
+  version '2.3.4'
+  sha256 '98cbc56f21e757d1ff020ef1857aaf3e487953918eebcad133b375c389617108'
 
-  url 'https://www.peterborgapps.com/downloads/LingonX2.zip'
-  appcast 'https://www.peterborgapps.com/updates/lingonx2-appcast.xml'
+  url "https://www.peterborgapps.com/downloads/LingonX#{version.major}.zip"
+  appcast "https://www.peterborgapps.com/updates/lingonx#{version.major}-appcast.xml",
+          checkpoint: 'ffc48fa080871daf5b3e96464dabfbc4ed1139cd5909f86d057cd239e3caf719'
   name 'Lingon X'
   homepage 'https://www.peterborgapps.com/lingon/'
   license :commercial
 
-  app 'Lingon X.app'
+  depends_on macos: '>= :yosemite'
 
-  depends_on :macos => '>= :yosemite'
+  app 'Lingon X.app'
 end

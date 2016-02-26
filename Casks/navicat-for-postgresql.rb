@@ -1,12 +1,11 @@
-cask :v1 => 'navicat-for-postgresql' do
-  version '11.1.15'
-  sha256 'b0f0bf0a70f4399bdf66d683a83749aa85a1e17b183249ac690d32be9e9c4500'
+cask 'navicat-for-postgresql' do
+  version '11.2.7'
+  sha256 'a32050c83ff37868d7b043e9f98441a78f1bf3043834bd97918a0fc5f2e27450'
 
-  url "http://download.navicat.com/download/navicat#{version.sub(%r{^(\d+)\.(\d+).*},'\1\2')}_pgsql_en.dmg"
+  url "http://download.navicat.com/download/navicat#{version.major_minor.no_dots}_pgsql_en.dmg"
   name 'Navicat for PostgreSQL'
   homepage 'http://www.navicat.com/products/navicat-for-postgresql'
   license :commercial
-  tags :vendor => 'Navicat'
 
   app 'Navicat for PostgreSQL.app'
 end

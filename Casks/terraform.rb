@@ -1,9 +1,9 @@
-cask :v1 => 'terraform' do
-  version '0.6.4'
-  sha256 'e2eee073432487aabd69003b3a293caa6e087d4b435d29f6406079333e2dca73'
+cask 'terraform' do
+  version '0.6.12'
+  sha256 'eaa50e05a88ef83a9ba18a3768932f4d530ce1b710b29ae29992f94addac0bfb'
 
-  # bintray.com is the official download host per the vendor homepage
-  url "https://dl.bintray.com/mitchellh/terraform/terraform_#{version}_darwin_amd64.zip"
+  # hashicorp.com is the official download host per the vendor homepage
+  url "https://releases.hashicorp.com/terraform/#{version}/terraform_#{version}_darwin_amd64.zip"
   name 'Terraform'
   homepage 'https://www.terraform.io/'
   license :mpl
@@ -12,22 +12,32 @@ cask :v1 => 'terraform' do
   binary 'terraform-provider-atlas'
   binary 'terraform-provider-aws'
   binary 'terraform-provider-azure'
+  binary 'terraform-provider-azurerm'
+  binary 'terraform-provider-chef'
   binary 'terraform-provider-cloudflare'
   binary 'terraform-provider-cloudstack'
   binary 'terraform-provider-consul'
+  binary 'terraform-provider-datadog'
   binary 'terraform-provider-digitalocean'
   binary 'terraform-provider-dme'
   binary 'terraform-provider-dnsimple'
   binary 'terraform-provider-docker'
+  binary 'terraform-provider-dyn'
   binary 'terraform-provider-google'
   binary 'terraform-provider-heroku'
   binary 'terraform-provider-mailgun'
+  binary 'terraform-provider-mysql'
   binary 'terraform-provider-null'
   binary 'terraform-provider-openstack'
   binary 'terraform-provider-packet'
+  binary 'terraform-provider-postgresql'
+  binary 'terraform-provider-powerdns'
   binary 'terraform-provider-rundeck'
+  binary 'terraform-provider-statuscake'
   binary 'terraform-provider-template'
   binary 'terraform-provider-terraform'
+  binary 'terraform-provider-tls'
+  binary 'terraform-provider-vcd'
   binary 'terraform-provider-vsphere'
   binary 'terraform-provisioner-chef'
   binary 'terraform-provisioner-file'

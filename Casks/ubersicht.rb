@@ -1,13 +1,22 @@
-cask :v1 => 'ubersicht' do
-  version '0.5'
-  sha256 '5d3712a3ec8c46c510cbbaaa5299282179b22d224763e5429d9f919d39625d62'
+cask 'ubersicht' do
+  version '0.8.30'
+  sha256 '0035186cfc51800bed052bb9b32b8856975234da8532eff47295f6a925a09b14'
 
   url "http://tracesof.net/uebersicht/releases/Uebersicht-#{version}.app.zip"
-  name 'Übersicht'
   appcast 'http://tracesof.net/uebersicht/updates.xml.rss',
-          :sha256 => '2e0f4a180954bd9ce3ff7376ed886ba593c23a143071e30b2544482a75b07df9'
+          checkpoint: '8fac67d7368d3933edaa642e65d527da5fed750cda2c26d50ee2ceaeccad9dbe'
+  name 'Übersicht'
   homepage 'http://tracesof.net/uebersicht'
   license :gpl
 
   app 'Übersicht.app'
+
+  uninstall login_item: 'Übersicht'
+
+  zap delete: [
+                '~/Library/Application Support/tracesOf.Uebersicht',
+                '~/Library/Application Support/Übersicht',
+                '~/Library/Caches/tracesOf.Uebersicht',
+                '~/Library/Preferences/tracesOf.Uebersicht.plist',
+              ]
 end

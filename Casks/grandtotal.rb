@@ -1,15 +1,15 @@
-cask :v1 => 'grandtotal' do
-  version '4.0.1'
-  sha256 '15f04b9ade6f817b7014e4a61de779283d66fc088b10fd71e738d33fad296bec'
+cask 'grandtotal' do
+  version '4.1.6'
+  sha256 'e5999f32d16737d3867f1b22d6cba54f024c83cab0d96f82c2c8b2f0559dbb41'
 
-  url "http://mediaatelier.com/GrandTotal3/GrandTotal_#{version}.zip"
-  appcast 'http://mediaatelier.com/GrandTotal3/feed.php',
-          :sha256 => '11fa077fba9cf8c6f9786dd29879edcf664480b1a1a1dbb3137a8a0c94b8a1b0'
+  url "https://mediaatelier.com/GrandTotal4/GrandTotal_#{version}.zip"
+  appcast 'https://mediaatelier.com/GrandTotal4/feed.php',
+          checkpoint: 'e8ccc71638e5a4177a334d8c1a9a13c14f04382088f93e1e2dee2414560c0a7e'
   name 'GrandTotal'
-  homepage 'http://www.mediaatelier.com/GrandTotal3/'
+  homepage 'https://www.mediaatelier.com/GrandTotal4/'
   license :commercial
 
-  depends_on :macos => '>= :mountain_lion'
+  depends_on macos: '>= :mountain_lion'
 
-  app "GrandTotal #{version.to_i}.app"
+  app 'GrandTotal.app'
 end

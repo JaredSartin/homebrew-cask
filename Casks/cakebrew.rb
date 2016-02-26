@@ -1,10 +1,10 @@
-cask :v1 => 'cakebrew' do
-  version '1.1.4'
-  sha256 '072a399ccbed4e08892a9e64a85db51383deec951f29f66a5bd28cee9360347d'
+cask 'cakebrew' do
+  version '1.2'
+  sha256 '2d9de51fbca270abaf69a7b7fd822fe52790478508ab71401430d13d2bbcd098'
 
-  url "https://www.cakebrew.com/files/cakebrew-#{version}.dmg"
+  url "https://www.cakebrew.com/files/cakebrew-#{version}.zip"
   appcast 'https://www.cakebrew.com/appcast/profileInfo.php',
-          :sha256 => '1c147ec8de9b02df0eab2bbcae96b65d6a5e6ee76a865a3f6ac081c6b4b8f65b'
+          checkpoint: 'b21892747ea8b7924813c3c08cd52da136332886961dfef3d52cf53eb5b0de2a'
   name 'Cakebrew'
   homepage 'https://www.cakebrew.com/'
   license :gpl

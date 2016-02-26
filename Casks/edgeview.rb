@@ -1,15 +1,14 @@
-cask :v1 => 'edgeview' do
-  version '0.9985'
-  sha256 '763e583b8cce31214567e934d22d8ae5ce2cbef67a455d0e7ff583b2ba4eb0a4'
+cask 'edgeview' do
+  version '0.9998'
+  sha256 'ee59450920a169ff64b6ff8c258648f1e4ee294242401d1769bd7fd36dc228e4'
 
-  # dropboxusercontent.com is the official download host per the vendor homepage
-  url "https://dl.dropboxusercontent.com/u/168552/edgeViewUpdate/files/EdgeView_#{version.sub(%r{^\d+\.},'')}.zip"
+  # dropboxusercontent.com/u/168552 was verified as official when first introduced to the cask
+  url "https://dl.dropboxusercontent.com/u/168552/edgeViewUpdate/files/EdgeView_#{version.minor}.zip"
+  appcast 'https://dl.dropboxusercontent.com/u/168552/edgeViewUpdate/edgeView_update.xml',
+          checkpoint: '3e1af95c9d64ba5e39f004d61ddb4da416171a04bc45a2fa5cf9e3489e1771ab'
   name 'EdgeView'
   homepage 'https://edgehigh.wordpress.com'
-  appcast 'https://dl.dropboxusercontent.com/u/168552/edgeViewUpdate/edgeView_update.xml',
-          :sha256 => '53c2770f6a17d4b3b09e9f238721d547a3766266a5651f87c05450637a66b986',
-          :format => :sparkle
-  license :unknown    # todo: change license and remove this comment; ':unknown' is a machine-generated placeholder
+  license :unknown # TODO: change license and remove this comment; ':unknown' is a machine-generated placeholder
 
   app 'EdgeView.app'
 end

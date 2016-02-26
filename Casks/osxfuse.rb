@@ -1,8 +1,8 @@
-cask :v1 => 'osxfuse' do
-  version '2.8.1'
-  sha256 '5bc1f3165bedb4395f7b1d1fd88ea25feeca9ee6f2c751c17249bafc6a5c66cd'
+cask 'osxfuse' do
+  version '2.8.3'
+  sha256 'b0f05fa6e74372b73417e89bfd103a46a0b968239f03832755e424bec09051e6'
 
-  # sourceforge.net is the official download host per the vendor homepage
+  # sourceforge.net/project/osxfuse was verified as official when first introduced to the cask
   url "http://downloads.sourceforge.net/project/osxfuse/osxfuse-#{version}/osxfuse-#{version}.dmg"
   name 'OSXFUSE'
   homepage 'https://osxfuse.github.io/'
@@ -10,12 +10,12 @@ cask :v1 => 'osxfuse' do
 
   pkg "Install OSXFUSE #{version[0..-3]}.pkg"
 
-  uninstall :pkgutil => 'com.github.osxfuse.pkg.Core|com.github.osxfuse.pkg.PrefPane',
-            :kext => 'com.github.osxfuse.filesystems.osxfusefs'
-
   postflight do
     set_ownership ['/usr/local/include', '/usr/local/lib']
   end
+
+  uninstall pkgutil: 'com.github.osxfuse.pkg.Core|com.github.osxfuse.pkg.PrefPane',
+            kext:    'com.github.osxfuse.filesystems.osxfusefs'
 
   caveats do
     reboot

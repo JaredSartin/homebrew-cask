@@ -1,12 +1,14 @@
-cask :v1 => 'consul-template' do
-  version '0.10.0'
-  sha256 '178e8e59d2e380440ac5582fb7f49c946ff931c1589ac85258d7dba82aefaabe'
+cask 'consul-template' do
+  version '0.12.1'
+  sha256 '9ccdfd5a99ed69cd694bbaa10ff45d1a660eda2d74ba010dc0400641959e5e73'
 
-  url "https://github.com/hashicorp/consul-template/releases/download/v#{version}/consul-template_#{version}_darwin_amd64.tar.gz"
-  appcast 'https://github.com/hashicorp/consul-template/releases.atom'
+  # hashicorp.com was verified as official when first introduced to the cask
+  url "https://releases.hashicorp.com/consul-template/#{version}/consul-template_#{version}_darwin_amd64.zip"
+  appcast 'https://github.com/hashicorp/consul-template/releases.atom',
+          checkpoint: '2b7b817bf811db4cc66b7eeecbde3594bf0fc5e888aa02563a81e249e263e715'
   name 'Consul Template'
   homepage 'https://github.com/hashicorp/consul-template'
   license :mpl
 
-  binary "consul-template_#{version}_darwin_amd64/consul-template"
+  binary 'consul-template'
 end
